@@ -1,28 +1,29 @@
 package com.farmadavlia.medicamentos.service;
 
 
-import com.farmadavlia.medicamentos.domain.dto.InformacoesInjetaveisDTO;
 import com.farmadavlia.medicamentos.domain.dto.MedicamentoDTO;
-import com.farmadavlia.medicamentos.domain.models.InformacoesInjetaveisEntity;
+import com.farmadavlia.medicamentos.domain.dto.MedicamentoInjetavelDTO;
 import com.farmadavlia.medicamentos.domain.models.MedicamentoEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public interface MedicamentoService {
 
-//    MedicamentoDTO salvarMedicamentoNaoInjetavel(Long id, String nomeMedicamento, String descricao, double preco,
-//                                                 double precoComDesconto, String Marca, String fabricante);
-
     MedicamentoDTO salvarMedicamentoNaoInjetavel(MedicamentoDTO medicamentoDTO);
 
-    MedicamentoDTO salvarMedicamentoInjetavel(MedicamentoDTO medicamentoInjetavelDTO,
-                                              InformacoesInjetaveisDTO informacoesInjetaveisDTO);
+    MedicamentoInjetavelDTO salvarMedicamentoInjetavel(MedicamentoInjetavelDTO medicamentoInjetavelDTO);
 
-    List<MedicamentoEntity> listarMedicamentos();
+    MedicamentoDTO atualizarMedicamento(Long id, BigDecimal preco, BigDecimal precoComDesconto);
 
-    MedicamentoDTO buscarMedicamentoPorId(Long id);
+    Page<MedicamentoDTO> listarMedicamentos(Pageable pageable);
 
-    MedicamentoDTO buscarMedicamentoPorFiltro(String marca, String fabricante, BigDecimal preco);
+    List<MedicamentoDTO> buscarMedicamentoPorFiltro(String marca, String fabricante, BigDecimal precoMenorQue,
+                                             BigDecimal precoMaiorQue);
+
+    MedicamentoDTO deletarMedicamento(Long id);
+
 
 }

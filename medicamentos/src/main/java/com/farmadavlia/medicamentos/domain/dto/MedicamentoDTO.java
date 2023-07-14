@@ -23,9 +23,16 @@ public class MedicamentoDTO {
     private BigDecimal precoComDesconto;
     private String marca;
     private String fabricante;
+    private String tipoAplicacao;
 
-    private TipoAplicacao tipoAplicacao;
     public MedicamentoDTO(MedicamentoEntity medicamentoEntity) { // permite a criação de uma instância da entidade apartidir
         BeanUtils.copyProperties(medicamentoEntity, this);
     }
+
+//    public String getDescricaoTipoAplicacao() {
+//        if (tipoAplicacao != null) {
+//            return tipoAplicacao.name();
+//        }
+//        return null;
+//    }
 }

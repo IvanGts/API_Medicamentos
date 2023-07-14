@@ -1,19 +1,21 @@
 package com.farmadavlia.medicamentos.domain.models;
 
 import com.farmadavlia.medicamentos.domain.dto.MedicamentoDTO;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import com.farmadavlia.medicamentos.domain.enums.TipoAplicacao;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -45,15 +47,7 @@ public class MedicamentoEntity {
     private String marca;
     @Column(name = "fabricante")
     private String fabricante;
+    @Column(name = "categoria")
+    private String tipoAplicacao;
 
-    @OneToOne(mappedBy = "medicamentoEntity")
-    private InformacoesInjetaveisEntity informacoesInjetaveisEntity;
-
-    public static class MedicamentoEntityBuilder {
-
-        public MedicamentoEntityBuilder informacoesInjetaveisEntity(InformacoesInjetaveisEntity informacoesInjetaveisEntity) {
-            this.informacoesInjetaveisEntity = informacoesInjetaveisEntity;
-            return this;
-        }
-    }
 }

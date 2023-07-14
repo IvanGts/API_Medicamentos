@@ -10,9 +10,14 @@ public enum TipoAplicacao {
     INTRAMUSCULAR("Intramuscular"),
     SUBCUTANEA("Subcut\u00E2nea");
 
-    private final String descricao;
+    private final String descricaoAplicacao;
 
     TipoAplicacao(String descricao) {
-        this.descricao = descricao;
+        this.descricaoAplicacao = descricao;
     }
+
+    public String getDescricaoAplicacao(){
+        return descricaoAplicacao;
+    }
+
 }
