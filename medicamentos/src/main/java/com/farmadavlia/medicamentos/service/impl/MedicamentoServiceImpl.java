@@ -112,7 +112,7 @@ public class MedicamentoServiceImpl implements MedicamentoService {
                 medicamentoDTO.getPrecoComDesconto();
                 return medicamentoDTO;
         });
-        return medicamentoPaginadoDTO;  
+        return medicamentoPaginadoDTO;
     }
 
 
