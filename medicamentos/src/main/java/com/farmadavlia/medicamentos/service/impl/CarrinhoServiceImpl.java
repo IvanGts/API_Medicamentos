@@ -1,33 +1,34 @@
-//package com.farmadavlia.medicamentos.service.impl;
+package com.farmadavlia.medicamentos.service.impl;
+
+import com.farmadavlia.medicamentos.domain.dto.CarrinhoDTO;
+import com.farmadavlia.medicamentos.domain.dto.MedicamentoDTO;
+import com.farmadavlia.medicamentos.domain.models.CarrinhoEntity;
+import com.farmadavlia.medicamentos.domain.models.MedicamentoEntity;
+import com.farmadavlia.medicamentos.service.CarrinhoService;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CarrinhoServiceImpl implements CarrinhoService {
+
+
+
+
+//TODO: SERÁ IMPLEMENTADO OS MÉTODOS DE ADICIONAR, REMOVER E LIMPAR O CARRINHO
+
+//    @Override
+//    public CarrinhoDTO adicionarAoCarrinho(List<MedicamentoDTO> medicamentoDTOList) {
+//        List<MedicamentoEntity> medicamentoEntityList = new ArrayList<>();
 //
-//import com.farmadavlia.medicamentos.domain.dto.CarrinhoDTO;
-//import com.farmadavlia.medicamentos.domain.dto.MedicamentoDTO;
-//import com.farmadavlia.medicamentos.domain.models.CarrinhoEntity;
-//import com.farmadavlia.medicamentos.domain.models.MedicamentoEntity;
-//import com.farmadavlia.medicamentos.service.CarrinhoService;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class CarrinhoServiceImpl implements CarrinhoService {
+//        medicamentoEntityList.add();
 //
 //
 //
 //
 //
-////    @Override
-////    public CarrinhoDTO adicionarAoCarrinho(List<MedicamentoDTO> medicamentoDTOList) {
-////        List<MedicamentoEntity> medicamentoEntityList = new ArrayList<>();
-////
-////        medicamentoEntityList.add();
-////
-////
-////
-////
-////
-////        return null;
-////    }
-//
+//        return null;
+//    }
+
 //    @Override
 //    public CarrinhoDTO removerDoCarrinho(Long id) {
 //        return null;
@@ -37,4 +38,4 @@
 //    public CarrinhoDTO limparCarrinho(List<MedicamentoDTO> medicamentoDTOList) {
 //        return null;
 //    }
-//}
+}

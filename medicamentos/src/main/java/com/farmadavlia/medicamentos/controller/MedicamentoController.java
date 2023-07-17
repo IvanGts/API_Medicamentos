@@ -46,6 +46,8 @@ public class MedicamentoController {
         @PostMapping("/cadastro")
         public ResponseEntity<String> cadastrarMedicamento(@RequestBody MedicamentoDTO medicamentoDto, MedicamentoInjetavelDTO medicamentoInjetavelDTO){
 
+
+
             if (medicamentoInjetavelDTO.getTipoAplicacao() == null){
                 try {
                     medicamentoService.salvarMedicamentoNaoInjetavel(medicamentoDto);

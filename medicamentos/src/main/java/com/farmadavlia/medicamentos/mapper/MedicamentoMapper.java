@@ -8,6 +8,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,5 +35,10 @@ public class MedicamentoMapper {
             medicamentoListDto.add(medicamentoDTO);
         }
         return medicamentoListDto;
+    }
+
+    public String normalizarTexto(String texto) {
+        String normalizedText = Normalizer.normalize(texto, Normalizer.Form.NFD);
+        return normalizedText.replaceAll("[^\\p{ASCII}]", "").toLowerCase();
     }
 }

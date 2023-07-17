@@ -63,16 +63,11 @@ public class MedicamentoServiceImpl implements MedicamentoService {
                 .tipoAplicacao(medicamentoInjetavelDTO.getTipoAplicacao())
                 .build();
 
+        String tipoAplicacaoNormalizado = medicamentoMapper.normalizarTexto(medicamentoInjetavel.getTipoAplicacao());
         switch (medicamentoInjetavel.getTipoAplicacao()){
             case "Endovenosa":
-                medicamentoRepository.save(medicamentoInjetavel);
-                return medicamentoInjetavelDTO;
             case "Intradérmica":
-                medicamentoRepository.save(medicamentoInjetavel);
-                return medicamentoInjetavelDTO;
             case "Intramuscular":
-                medicamentoRepository.save(medicamentoInjetavel);
-                return medicamentoInjetavelDTO;
             case "Subcutânea":
                 medicamentoRepository.save(medicamentoInjetavel);
                 return medicamentoInjetavelDTO;
@@ -117,7 +112,7 @@ public class MedicamentoServiceImpl implements MedicamentoService {
                 medicamentoDTO.getPrecoComDesconto();
                 return medicamentoDTO;
         });
-        return medicamentoPaginadoDTO;  //TODO : MÉTODO RETORNANDO ERRO
+        return medicamentoPaginadoDTO;  
     }
 
 
