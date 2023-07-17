@@ -62,7 +62,6 @@ public class MedicamentoServiceImpl implements MedicamentoService {
                 .fabricante(medicamentoInjetavelDTO.getFabricante())
                 .tipoAplicacao(medicamentoInjetavelDTO.getTipoAplicacao())
                 .build();
-
         String tipoAplicacaoNormalizado = medicamentoMapper.normalizarTexto(medicamentoInjetavel.getTipoAplicacao());
         switch (medicamentoInjetavel.getTipoAplicacao()){
             case "Endovenosa":
@@ -74,8 +73,6 @@ public class MedicamentoServiceImpl implements MedicamentoService {
             default:
                 throw new RuntimeException("Categoria não existe ");
         }
-
-
     }
 
     @Override
